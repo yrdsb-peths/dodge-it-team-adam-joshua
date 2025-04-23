@@ -4,9 +4,11 @@ public class Score extends Actor
 {
     private int score;  // Variable to hold the score
     private boolean gameOver;
+    private int counter;
     public Score() 
     {
         score = 0;
+        counter = 0;
         gameOver = false;
         updateImage();
     }
@@ -14,8 +16,11 @@ public class Score extends Actor
     public void act() 
     {
         if (!gameOver) {
-            score++; 
-            updateImage(); 
+            counter++;
+            if (counter % 2 == 0) {
+                score++; 
+                updateImage(); 
+            }
         }
     }
 
@@ -31,8 +36,8 @@ public class Score extends Actor
         return score;
     }
 
-    public void incrementScore() {
-        score++;  
+    public void incrementScore(int value) {
+        score+= value;  
         updateImage();
     }
     public void gameOver() 

@@ -1,4 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
+import java.util.List;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Food here.
@@ -28,7 +29,13 @@ public class Food extends Actor
         }
         
         if(isTouching(Hero.class)) 
-        {
+        {   
+            List<Score> scores = getWorld().getObjects(Score.class);
+            if (!scores.isEmpty()) 
+            {
+                Score score = scores.get(0);
+                score.incrementScore(100);
+            }
             Banana.increase -= 2 + Greenfoot.getRandomNumber(3);
             getWorld().removeObject(this);
         }
