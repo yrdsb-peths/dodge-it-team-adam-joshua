@@ -36,7 +36,7 @@ public class Food extends Actor
                 Score score = scores.get(0);
                 score.incrementScore(100);
             }
-            Banana.increase -= 2 + Greenfoot.getRandomNumber(3);
+            Banana.increase -= 1 + Greenfoot.getRandomNumber(3);
             getWorld().removeObject(this);
         }
     }
