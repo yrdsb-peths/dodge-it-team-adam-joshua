@@ -47,8 +47,8 @@ public class Banana extends Actor
         if (count == 5) 
         {
             count = 0;
-            increase+= Greenfoot.getRandomNumber(3);
-            if(increase > 4) 
+            increase+= 1+Greenfoot.getRandomNumber(3);
+            if(increase >= 5) 
             {  
                 Food food = new Food();
                 getWorld().addObject(food, 600, 100);

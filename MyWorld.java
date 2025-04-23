@@ -9,6 +9,9 @@ public class MyWorld extends World {
         Banana banana = new Banana();
         addObject(banana, 600, 100);
         
+        Score score = new Score("Score: ");
+        addObject(score, 100, 20);
+        
         GreenfootImage myImage = new GreenfootImage("road.png");
         setBackground(myImage);
     }
