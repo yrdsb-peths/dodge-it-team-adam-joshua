@@ -1,4 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; 
+import java.util.List;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class banana here.
@@ -8,10 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Banana extends Actor
 {
-    /**
-     * Act - do whatever the banana wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     public static int increase = 3;
     public int count = 0; 
     public void act()
@@ -19,13 +17,20 @@ public class Banana extends Actor
         // Add your action code here.
         
         move(-increase);
-        if(getX() <= 0) 
+        if(getX() <= 0 || increase <= 0) 
         {
         resetBanana();
         }
         
         if(isTouching(Hero.class)) 
         {
+            if (getWorld() != null) {
+                List<Score> scores = getWorld().getObjects(Score.class);
+                if (!scores.isEmpty()) {
+                    Score score = scores.get(0); // Assuming there is only one Score object
+                    score.gameOver(); // Call gameOver() from Score
+                }
+            }
             GameOver over = new GameOver();
             getWorld().addObject(over, 300, 200);
             getWorld().removeObject(this);
@@ -37,14 +42,14 @@ public class Banana extends Actor
         if (num == 0) 
         {
             setLocation(600, 100);
-            count++;
+            count += 1+Greenfoot.getRandomNumber(2);
         }
         else 
         {
             setLocation(600, 300);
-            count++;
+            count += 1+Greenfoot.getRandomNumber(2);
         }
-        if (count == 5) 
+        if (count >= 5) 
         {
             count = 0;
             increase+= 1+Greenfoot.getRandomNumber(3);

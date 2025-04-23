@@ -1,11 +1,42 @@
-import greenfoot.*; 
+import greenfoot.*;  // Import Greenfoot library
 
 public class Score extends Actor
 {
-    public Score(String text)
+    private int score;  // Variable to hold the score
+    private boolean gameOver;
+    public Score() 
     {
-        GreenfootImage img = new GreenfootImage(text.length()*20, 20);
-        img.drawString(text, 2, 20);
-        setImage(img);
+        score = 0;
+        gameOver = false;
+        updateImage();
+    }
+
+    public void act() 
+    {
+        if (!gameOver) {
+            score++; 
+            updateImage(); 
+        }
+    }
+
+    private void updateImage() 
+    {
+        GreenfootImage img = new GreenfootImage(100, 20);
+        img.setColor(Color.RED);  
+        img.drawString("Score: " + score, 2, 15);
+        setImage(img); 
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void incrementScore() {
+        score++;  
+        updateImage();
+    }
+    public void gameOver() 
+    {
+        gameOver = true;
     }
 }

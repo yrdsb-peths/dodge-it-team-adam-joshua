@@ -29,7 +29,7 @@ public class Food extends Actor
         
         if(isTouching(Hero.class)) 
         {
-            Banana.increase = 3;
+            Banana.increase -= 2 + Greenfoot.getRandomNumber(3);
             getWorld().removeObject(this);
         }
     }
