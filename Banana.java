@@ -12,7 +12,7 @@ public class Banana extends Actor
      * Act - do whatever the banana wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public int increase = 3;
+    public static int increase = 3;
     public int count = 0; 
     public void act()
     {
@@ -48,6 +48,11 @@ public class Banana extends Actor
         {
             count = 0;
             increase+= Greenfoot.getRandomNumber(3);
+            if(increase > 4) 
+            {  
+                Food food = new Food();
+                getWorld().addObject(food, 600, 100);
+            }
         }
     }
 }
