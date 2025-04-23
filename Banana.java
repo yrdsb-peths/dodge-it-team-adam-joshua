@@ -12,7 +12,7 @@ public class Banana extends Actor
      * Act - do whatever the banana wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public int increase = 5;
+    public int increase = 3;
     public int count = 0; 
     public void act()
     {
