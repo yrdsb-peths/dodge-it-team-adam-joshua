@@ -45,15 +45,14 @@ public class Food extends Actor
     public void setFood() 
     {
         int num = Greenfoot.getRandomNumber(2); 
+        move = 2+ Greenfoot.getRandomNumber(3);
         if (num == 0) 
         {
             setLocation(600, 100);
-            move = 2+ Greenfoot.getRandomNumber(3);
         }
         else 
         {
             setLocation(600, 300);
-            move = 2+ Greenfoot.getRandomNumber(3);
         }
     }
 }
