@@ -25,7 +25,8 @@ public class Food extends Actor
         move(-3);
         if(getX() <= 0) 
         {
-        getWorld().removeObject(this);
+            if (getWorld() != null) getWorld().removeObject(this);
+            return;
         }
         
         if(isTouching(Hero.class)) 
