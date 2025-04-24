@@ -14,15 +14,16 @@ public class Food extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private boolean actionPerformed = false;
-
+    private int move = 0;
     public void act()
     {
         // Add your action code here.
+        
         if (!actionPerformed) {
             setFood();
             actionPerformed = true;
         }
-        move(-3);
+        move(-move);
         if(getX() <= 0) 
         {
             if (getWorld() != null) getWorld().removeObject(this);
@@ -47,10 +48,12 @@ public class Food extends Actor
         if (num == 0) 
         {
             setLocation(600, 100);
+            move = 2+ Greenfoot.getRandomNumber(3);
         }
         else 
         {
             setLocation(600, 300);
+            move = 2+ Greenfoot.getRandomNumber(3);
         }
     }
 }
