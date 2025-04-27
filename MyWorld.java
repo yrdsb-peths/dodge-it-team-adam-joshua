@@ -18,6 +18,7 @@ public class MyWorld extends World {
         GreenfootImage myImage = new GreenfootImage("road.png");
         setBackground(myImage);
         
-        
+        highscore = new HighScore();
+        addObject(highscore, 500, 20);
     }
 }
