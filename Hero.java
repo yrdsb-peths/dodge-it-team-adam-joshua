@@ -16,6 +16,7 @@ public class Hero extends Actor
     public void act()
     {
         // Add your action code here.
+        setImage("person.png");
         String key = Greenfoot.getKey();
         if (key != null)
        {

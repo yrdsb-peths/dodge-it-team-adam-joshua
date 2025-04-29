@@ -15,7 +15,7 @@ public class Banana extends Actor
     public void act()
     {
         // Add your action code here.
-        
+        setImage("baby2.png");
         move(-increase);
         if(getX() <= 0 || increase <= 0) 
         {
