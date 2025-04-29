@@ -19,7 +19,7 @@ public class Hero extends Actor
         String key = Greenfoot.getKey();
         if (key != null)
        {
-           if (key.equals("space"))
+           if (key.equals("space") || key.equals("w"))
            {
                atTop = !atTop;
            }
