@@ -3,6 +3,7 @@ public class MyWorld extends World {
     private Score score;  // Reference to the Score object
     private Hero hero;    // Reference to the Hero object
     private Banana banana;
+    private HighScore highscore;
     public MyWorld() {
         super(600, 400, 1);
         Banana.increase = 3;
